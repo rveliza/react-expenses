@@ -29,6 +29,9 @@ const ExpenseForm = () => {
             date: new Date(enteredDate)
         };
 
+        setEnteredAmount('');
+        setEnteredDate('');
+        setEnteredTitle('');
         console.log(expenseData);
     };
 
@@ -37,15 +40,15 @@ const ExpenseForm = () => {
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label htmlFor="">Title</label>
-                    <input type="text" name="" id="" onChange={ titleChangeHandler }/>
+                    <input type="text" name="" id="" onChange={ titleChangeHandler } value={enteredTitle}/>
                 </div>
                 <div className="new-expense__control">
                     <label htmlFor="">Amount</label>
-                    <input type="number" name="" id="" min="0.01" step="0.01" onChange={ amountChangeHandler }/>
+                    <input type="number" name="" id="" min="0.01" step="0.01" onChange={ amountChangeHandler } value={enteredAmount}/>
                 </div>
                 <div className="new-expense__control">
                     <label htmlFor="">Date</label>
-                    <input type="date" name="" id="" min="2023-01-01" max="2030-01-01" onChange={ dateChangeHandler }/>
+                    <input type="date" name="" id="" min="2023-01-01" max="2030-01-01" onChange={ dateChangeHandler } value={enteredDate}/>
                 </div>
             </div>
             <div className="new-expense__actions">
