@@ -19,7 +19,8 @@ const Expenses = props => {
         <div>
             <Card className="expenses">
                 <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-                {filteredExpenses.length === 0 ? <p>No expenses found.</p> : 
+                {filteredExpenses.length === 0 && <p>No expenses found.</p>}
+                {filteredExpenses.length > 0 && 
                 filteredExpenses.map(expense => (
                     <ExpenseItem
                         key={expense.id}
